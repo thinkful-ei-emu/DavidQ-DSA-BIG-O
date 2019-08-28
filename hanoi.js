@@ -1,16 +1,15 @@
-function Hanoi(disk, source = 'A', dest='C', temp ='B', counter = 0){
- 
-  if(disk === 1)
-  {
+function Hanoi(disk, source = 'A', dest='C', temp ='B',){
+  if(disk === 1){
     console.log(`${source} -> ${dest}`);
     return;
   }
-  Hanoi(disk - 1, source, temp, dest,++counter);
-  Hanoi(disk - 1 , source,dest, temp,++counter);
-  Hanoi(disk - 1 ,temp,dest,source,++counter);
+  Hanoi(--disk,source,temp,dest);
+  Hanoi(1,source,dest,temp);
+  Hanoi(disk,temp,dest,source);
+
 
   
 
 }
 
-Hanoi(3);
+Hanoi(4);
